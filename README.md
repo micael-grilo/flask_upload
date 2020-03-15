@@ -1,1 +1,7 @@
-To run: `python app.py`
+## Run app with
+
+> `python app.py`
+
+## Run tests with
+
+> `pytest --verbose `
