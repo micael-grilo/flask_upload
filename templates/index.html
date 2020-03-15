@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Flask Upload Example</title>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <br>
+    <div class="container">
+        <div class="panel panel-default">
+            {% block body %}
+            <div class="panel-heading">
+                <strong>Flask Upload Example</strong>
+            </div>
+            <div class="panel-body">
+                {% if not done %}
+                <!-- Standar Form -->
+                <h4>Select files from your computer</h4>
+                <form action="/" method="post" enctype="multipart/form-data">
+                    <div class="form-inline">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Name" minlength="4" maxlength="20" required>
+                            <input type="file" name="file" required>
+                        </div>
+                        <button type="submit" class="btn btn-sm btn-primary">Submit file</button>
+                    </div>
+                </form>
+                {% else %}
+                <h4>
+                    <a href="/img/{{ name }}">
+                        {{ name }} image {% if file_exists %} changed {% else %} uploaded {% endif %}
+                    </a>
+                </h4>
+                {% endif %}
+            </div>
+            {% endblock %}
+        </div>
+    </div>
+</body>
+
+</html>

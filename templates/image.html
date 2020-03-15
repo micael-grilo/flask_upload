@@ -1,0 +1,10 @@
+{% extends 'index.html' %}
+{% block body %}
+<div class="panel-heading">
+    <strong>{{ filename }} image</strong>
+</div>
+<div class="panel-body">
+    <img src="/img/{{ filename }}" />
+</div>
+
+{% endblock %}
